@@ -1,10 +1,10 @@
 namespace AmazonBook.Data;
-using Microsoft.EntityFrameworkCore;
 using AmazonBooks.Models;
+using Microsoft.EntityFrameworkCore;
 public class ApplicationDbContext:DbContext
 {
 
-public ApplicationDbContext(DbContextOptions<Application>options):base(options){
+public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options){
 
 }
 public DbSet<BooksEntity>Books{get;}
