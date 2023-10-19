@@ -1,11 +1,13 @@
-namespace AmazonBook.Data;
 using AmazonBooks.Models;
+using AmazonBook.Data;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.services.AddDbContext<ApplicationDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnencionString("DefaultConnection")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
